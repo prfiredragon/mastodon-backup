@@ -5,6 +5,8 @@
 #Define backup directory
         backup_folder_name="/opt/mastodon-backup/backup-data/$(date +"%Y_%m_%d_%I_%M_%p")"
         old_backup_folder_name="/opt/mastodon-backup/backup-data/$(date -d "7 days ago" +"%Y_%m_%d_%I_%M_%p")"
+#Define log directory
+        logdirectory="/opt/mastodon-backup/logs"
 
 #Script GO Home
 cd $backup_script
@@ -21,6 +23,15 @@ else
 fi
 
         DIRECTORY="$backup_folder_name"
+if [ ! -d "$DIRECTORY" ]; then
+  echo "$DIRECTORY does not exist."
+  mkdir $DIRECTORY
+  echo "$DIRECTORY created"
+else
+  echo "$DIRECTORY does exist."
+fi
+
+        DIRECTORY="$logdirectory"
 if [ ! -d "$DIRECTORY" ]; then
   echo "$DIRECTORY does not exist."
   mkdir $DIRECTORY
