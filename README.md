@@ -2,6 +2,8 @@
 mastodon-backup
 This is designed for a server that have 2 disks one for the / and one for /home/mastodon . The script backup the important files to a directory on `/opt/mastodon-backup/backup-data` with the current date. like `/opt/mastodon-backup/backup-data/2024_09_17_12_00_AM` and remove the las 7 day backup.
 
+## Steps
+
 * `cd /opt/`
 * `git clone https://github.com/prfiredragon/mastodon-backup.git`
 * `chmod a+x /opt/mastodon-backup/backup.sh`
