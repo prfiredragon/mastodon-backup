@@ -4,6 +4,7 @@ This is designed for a server that have 2 disks one for the / and one for /home/
 
 * `cd /opt/`
 * `git clone https://github.com/prfiredragon/mastodon-backup.git`
+* `chmod a+x /opt/mastodon-backup/backup.sh`
 * `crontab -e`
 * add the line  `0 0 * * * /opt/mastodon-backup/backup.sh > /opt/mastodon-backup/logs/backup.log 2>&1`
 * save and exit
